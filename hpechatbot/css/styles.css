@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: grid;
+    place-content: center;
+    height: 100dvh;
+}
+
+main {
+    width: 400px;
+    max-width: 100%;
+    height: 70vh;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    margin-bottom: 16px;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 5px 8px;
+    font-weight: normal;
+    
+
+    span {
+        width: 36px;
+        height: 36px;
+        background: #ccc;
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+    }
+
+    &.user {
+        align-self: flex-end;
+        align-items: flex-end;
+
+        p {
+            background: #ccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
+
+    &.bot {
+        align-self: flex-start;
+
+        > span {
+            background-color: #8dffc0;
+        }
+
+        p {
+            background-color: #8dffc0;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
+}
+
+form {
+    display: flex;
+
+    input {
+        border-radius: 10px;
+        flex-grow: 1;
+        border: 0;
+        padding: 10px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+    }
+
+
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #8dffc0;
+        border: 2px solid #ccc;
+        cursor: pointer;
+        color: black;
+        
+        &[disabled] {
+            background: #ccc;
+            opacity: .6;
+            pointer-events: none;
+        } 
+
+        &:hover {
+            box-shadow: 0 2px 3px #ccc;
+        }
+    }
+}
+
+small {
+    font-size: 10px;
+    color: #555;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+}
